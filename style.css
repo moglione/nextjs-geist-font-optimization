@@ -1,0 +1,111 @@
+/* Variables configurables */
+:root {
+    --gutter: 20px;
+    --border-radius: 12px;
+    --panel-bg: #ffffff;
+    --container-bg: #f5f5f5;
+    --text-color: #333333;
+    --panel-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: var(--gutter);
+}
+
+/* Contenedor principal */
+.app-container {
+    min-height: calc(100vh - (var(--gutter) * 2));
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+}
+
+/* Estilos comunes para todos los paneles */
+.panel {
+    background-color: var(--panel-bg);
+    border-radius: var(--border-radius);
+    padding: var(--gutter);
+    box-shadow: var(--panel-shadow);
+}
+
+/* Panel de título */
+.panel-title {
+    width: 100%;
+    text-align: center;
+    padding: calc(var(--gutter) * 1.5);
+}
+
+.panel-title h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Contenedor de paneles principales */
+.panels-wrapper {
+    display: flex;
+    gap: var(--gutter);
+    flex: 1;
+    min-height: 0;
+}
+
+/* Paneles laterales */
+.panel-left,
+.panel-right {
+    flex: 0 0 25%;
+    min-width: 300px;
+}
+
+/* Panel central (canvas) */
+.panel-canvas {
+    flex: 1;
+}
+
+/* Estilos para encabezados dentro de los paneles */
+.panel h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .panel-left,
+    .panel-right {
+        flex: 0 0 300px;
+    }
+}
+
+@media (max-width: 968px) {
+    .panels-wrapper {
+        flex-direction: column;
+    }
+    
+    .panel-left,
+    .panel-right,
+    .panel-canvas {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --gutter: 12px;
+    }
+    
+    .panel-title h1 {
+        font-size: 1.5rem;
+    }
+}
