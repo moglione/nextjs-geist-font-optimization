@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Desktop App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Panel de título -->
+        <header class="panel panel-title" role="banner">
+            <h1>Panel Desktop App</h1>
+        </header>
+
+        <!-- Contenedor principal con paneles -->
+        <div class="panels-wrapper">
+            <!-- Panel izquierdo -->
+            <aside class="panel panel-left" role="complementary">
+                <h2>Panel Izquierdo</h2>
+                <p>Contenido del panel izquierdo (min 300px o 25% del viewport)</p>
+            </aside>
+
+            <!-- Panel central (canvas) -->
+            <main class="panel panel-canvas" role="main">
+                <h2>Panel Central (Canvas)</h2>
+                <p>Este es el panel principal que ocupa aproximadamente el 50% del viewport o el espacio restante después de los paneles laterales.</p>
+            </main>
+
+            <!-- Panel derecho -->
+            <aside class="panel panel-right" role="complementary">
+                <h2>Panel Derecho</h2>
+                <p>Contenido del panel derecho (min 300px o 25% del viewport)</p>
+            </aside>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
